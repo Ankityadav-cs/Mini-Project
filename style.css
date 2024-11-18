@@ -17,7 +17,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
+
 body::before {
     content: "";
     position: absolute;
@@ -25,26 +27,29 @@ body::before {
     height: 100vh;
     background: rgb(0, 0, 0, 0.15);
     backdrop-filter: blur(8px);
-} 
+}
 
-/* UTILITIES*/
+/* UTILITIES */
 .regular-txt {
     font-weight: 500;
 }
-/* END UTILITIES*/
+/* END UTILITIES */
 
 .main-contenter {
-    border: solid;
-    width: 500px; /* Adjust as needed */
-    height: 800px; /* Adjust as needed */
+    width: 100%;
+    max-width: 500px; /* Max width for larger screens */
+    height: auto;
+    min-height: 80vh;
     z-index: 1;
     background: linear-gradient(to top, rgb(0, 0, 0, 0.15), rgb(255, 255, 255, 0.15));
     border-radius: 30px;
     backdrop-filter: blur(40px);
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* INPUT CONTAINER */
 .input-container {
     position: relative;
     margin-bottom: 20px;
@@ -61,9 +66,11 @@ body::before {
     transition: 0.25s border;
     padding-right: 45px;
 }
+
 .city-input:focus {
     border: 4px solid rgb(0, 0, 0, 0.15);
 }
+
 .city-input::placeholder {
     color: rgb(255, 255, 255, 0.75);
 }
@@ -78,13 +85,11 @@ body::before {
     border: none;
     cursor: pointer;
 }
-/* END INPUT CONTAINER */
 
-/* SECTION WEATHER INFO */
 .weather-info {
     display: flex;
     flex-direction: column;
-    gap: 90px;
+    gap: 50px;
 }
 
 .location-date-container {
@@ -101,18 +106,17 @@ body::before {
 
 .weather-summary-container {
     display: flex;
-    justify-content: space-between;   
-    align-items: center; 
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* HAN YAHIN YAHIN YAHIN PE EDHAR DEKHO EDHAR HI HAI ERROR YE KAAM NAHI KR RHA HAI PATA NAHI KYU */
-.weather-summary img {          
-    width: 1px;
-    height: 1px;
+.weather-summary img {
+    width: 60px;
+    height: 60px;
 }
+
 .weather-summary-info {
-    
-    text-align: end; /* Adjust as needed */
+    text-align: end;
 }
 
 .weather-conditions-container {
@@ -120,36 +124,41 @@ body::before {
     justify-content: space-between;
     align-items: center;
 }
+
 .condition-item {
     display: flex;
     align-items: center;
     gap: 15px;
 }
+
 .condition-item span {
     font-size: 35px;
 }
 
 .forecast-item-container {
     display: flex;
-    gap: 30px; /* Space between forecast items */
-    overflow-x: auto; /* Allows horizontal scrolling */
-    overflow-y: hidden; /* Prevents vertical scrolling */
-    padding-bottom: 15px; /* Optional, adds space at the bottom */
-    justify-content: flex-start; /* Align items to the start of the container */
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    justify-content: flex-start;
 }
+
 .forecast-item-container::-webkit-scrollbar {
     height: 15px;
 }
+
 .forecast-item-container::-webkit-scrollbar-track {
     background: rgb(0, 0, 0, 0.1);
     border-radius: 99px;
 }
+
 .forecast-item-container::-webkit-scrollbar-thumb {
     background: rgb(0, 0, 0, 0.15);
     border-radius: 99px;
 }
+
 .forecast-item {
-    min-width: 130px; /* Controls the width of each forecast item */
+    min-width: 120px;
     background: rgb(255, 255, 255, 0.1);
     display: flex;
     flex-direction: column;
@@ -159,17 +168,17 @@ body::before {
     border-radius: 20px;
     transition: 0.1s background;
 }
+
 .forecast-item:hover {
     background: rgb(255, 255, 255, 0.15);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
+
 .forecast-item-img {
     width: 40px;
-    height: 100px;
+    height: 40px;
 }
-/* END SECTION WEATHER INFO */
 
-/* SECTION MESSAGE */
 .section-message {
     display: flex;
     flex-direction: column;
@@ -178,8 +187,68 @@ body::before {
     gap: 15px;
     margin-top: 25%;
 }
+
 .section-message img {
-    height: 300px;
-    width: fit-content;
+    height: 250px;
+    width: auto;
 }
-/* END SECTION MESSAGE */
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .main-contenter {
+        width: 90%; /* Max width on smaller screens */
+        padding: 15px;
+    }
+
+    .input-container {
+        margin-bottom: 10px;
+    }
+
+    .city-input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .weather-summary-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .forecast-item-container {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .forecast-item {
+        min-width: 100px;
+    }
+
+    .section-message img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-contenter {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .city-input {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .forecast-item {
+        min-width: 80px;
+    }
+
+    .forecast-item-img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .section-message img {
+        height: 180px;
+    }
+}
