@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+    color: white;
+    font-weight: 600;
+}
+
+body {
+    background: url('files/bg.jpg') no-repeat center center fixed;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: rgb(0, 0, 0, 0.15);
+    backdrop-filter: blur(8px);
+} 
+
+/* UTILITIES*/
+.regular-txt {
+    font-weight: 500;
+}
+/* END UTILITIES*/
+
+.main-contenter {
+    border: solid;
+    width: 500px; /* Adjust as needed */
+    height: 800px; /* Adjust as needed */
+    z-index: 1;
+    background: linear-gradient(to top, rgb(0, 0, 0, 0.15), rgb(255, 255, 255, 0.15));
+    border-radius: 30px;
+    backdrop-filter: blur(40px);
+    padding: 20px;
+}
+
+/* INPUT CONTAINER */
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.city-input {
+    width: 100%;
+    padding: 13px 15px;
+    border-radius: 99px;
+    border: 4px solid transparent;
+    background: rgb(0, 0, 0, 0.15);
+    outline: none;
+    font-weight: 500;
+    transition: 0.25s border;
+    padding-right: 45px;
+}
+.city-input:focus {
+    border: 4px solid rgb(0, 0, 0, 0.15);
+}
+.city-input::placeholder {
+    color: rgb(255, 255, 255, 0.75);
+}
+
+.search-btn {
+    position: absolute;
+    right: 10px;
+    top: 30%;
+    transform: translate(-50%);
+    background: none;
+    display: flex;
+    border: none;
+    cursor: pointer;
+}
+/* END INPUT CONTAINER */
+
+/* SECTION WEATHER INFO */
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+}
+
+.location-date-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.weather-summary-container {
+    display: flex;
+    justify-content: space-between;   
+    align-items: center; 
+}
+
+/* HAN YAHIN YAHIN YAHIN PE EDHAR DEKHO EDHAR HI HAI ERROR YE KAAM NAHI KR RHA HAI PATA NAHI KYU */
+.weather-summary img {          
+    width: 1px;
+    height: 1px;
+}
+.weather-summary-info {
+    
+    text-align: end; /* Adjust as needed */
+}
+
+.weather-conditions-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.condition-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.condition-item span {
+    font-size: 35px;
+}
+
+.forecast-item-container {
+    display: flex;
+    gap: 30px; /* Space between forecast items */
+    overflow-x: auto; /* Allows horizontal scrolling */
+    overflow-y: hidden; /* Prevents vertical scrolling */
+    padding-bottom: 15px; /* Optional, adds space at the bottom */
+    justify-content: flex-start; /* Align items to the start of the container */
+}
+.forecast-item-container::-webkit-scrollbar {
+    height: 15px;
+}
+.forecast-item-container::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0, 0.1);
+    border-radius: 99px;
+}
+.forecast-item-container::-webkit-scrollbar-thumb {
+    background: rgb(0, 0, 0, 0.15);
+    border-radius: 99px;
+}
+.forecast-item {
+    min-width: 130px; /* Controls the width of each forecast item */
+    background: rgb(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    align-items: center;
+    border-radius: 20px;
+    transition: 0.1s background;
+}
+.forecast-item:hover {
+    background: rgb(255, 255, 255, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.forecast-item-img {
+    width: 40px;
+    height: 100px;
+}
+/* END SECTION WEATHER INFO */
+
+/* SECTION MESSAGE */
+.section-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    margin-top: 25%;
+}
+.section-message img {
+    height: 300px;
+    width: fit-content;
+}
+/* END SECTION MESSAGE */

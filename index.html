@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <!--IMPORT GOOGLE ICONS-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" />
+</head>
+<body>
+
+    <main class="main-contenter">
+
+        <header class="input-container">
+            <input class="city-input" placeholder="search city" type="text" >
+            <button class="search-btn">
+                <span class="material-symbols-outlined">
+                    search
+                </span>
+            </button>
+        </header>
+
+        <section class="weather-info" style="display: none;">
+            <div class="location-date-container">
+                <div class="location">
+                    <span class="material-symbols-outlined">location_on</span>
+                    <h3 class="country-txt">Delhi</h3>
+                </div>
+                <h3 class="current-date-txt regular-txt">Sun, 17 Nov</h3>
+            </div>
+
+            <div class="weather-summary-container">
+                <img src="files/weather/clouds.svg" class="weather-summary-img">
+                <div class="weather-summary-info">
+                    <h1 class="temp-txt">29 °C</h1>
+                    <h3 class="condition-txt regular-txt">Clouds</h3>
+                </div>
+            </div>
+
+            <div class="weather-conditions-container">
+                <div class="condition-item">
+                    <span class="material-symbols-outlined">
+                        water_drop
+                    </span>
+                    <div class="condition-info">
+                        <h3 class="regular-txt">Humidity</h3>
+                        <h4 class="humidity-value-txt">55%</h4>
+                    </div>
+                </div>
+                
+                <div class="condition-item">
+                    <span class="material-symbols-outlined">
+                        air
+                    </span>
+                    <div class="condition-info">
+                        <h3 class="regular-txt">Wind Speed</h3>
+                        <h4 class="wind-value-txt">2 M/s</h4>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="forecast-item-container">
+                <div class="forecast-item">
+                    <h2 class="forecast-item-date regular-txt">05 Nov</h2>
+                    <img src="files/weather/thunderstorm.svg" class="forecast-item-img">
+                    <h2 class="forecast-item-temp">29 °C</h2>
+                </div>
+                <div class="forecast-item">
+                    <h2 class="forecast-item-date regular-txt">05 Nov</h2>
+                    <img src="files/weather/thunderstorm.svg" class="forecast-item-img">
+                    <h2 class="forecast-item-temp">29 °C</h2>
+                </div>
+                <div class="forecast-item">
+                    <h2 class="forecast-item-date regular-txt">05 Nov</h2>
+                    <img src="files/weather/thunderstorm.svg" class="forecast-item-img">
+                    <h2 class="forecast-item-temp">29 °C</h2>
+                </div>
+                <div class="forecast-item">
+                    <h2 class="forecast-item-date regular-txt">05 Nov</h2>
+                    <img src="files/weather/thunderstorm.svg" class="forecast-item-img">
+                    <h2 class="forecast-item-temp">29 °C</h2>
+                </div>
+                <!-- 5TH KRNA THA BUT YE HUA NAHI YE BHI SAMJH NAHI AA RHA -->
+                <div class="forecast-item">
+                    <h2 class="forecast-item-date regular-txt">05 Nov</h2>
+                    <img src="files/weather/thunderstorm.svg" class="forecast-item-img">
+                    <h2 class="forecast-item-temp">29 °C</h2>
+                </div>
+            </div>
+        </section>
+
+        <section class="search-city section-message">
+            <img src="files/message/search-city.png">
+             <div>
+                <h1>Search City</h1>
+                <h3 class="regular-txt">
+                    find out the weather condition of the city
+                </h3>
+             </div>
+        </section>
+
+        <section class="not-found section-message" style="display: none;">
+            <img src="files/message/not-found.png">
+             <div>
+                <h1>Search City</h1>
+                <h3 class="regular-txt">
+                    find out the weather condition of the city
+                </h3>
+             </div>
+        </section>
+    </main>
+    
+</body>
+</html>
+
