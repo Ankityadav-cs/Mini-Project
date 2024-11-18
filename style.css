@@ -141,7 +141,7 @@ body::before {
     gap: 20px;  /* Reduced gap */
     overflow-x: auto;
     overflow-y: hidden;
-    padding-bottom: 15px;
+    padding-bottom: 200px;
     justify-content: flex-start;
 }
 
